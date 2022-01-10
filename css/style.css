@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+
+body {
+  background-color: aliceblue;
+  color: black;
+  font-family: 'Dosis', sans-serif;
+}
+
+.gameStart, #start, .diceTime, .chanceTime, .duelTime {
+  display: none;
+}
+
+#container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 960px;
+}
+
+h1 {
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+button {
+  border-radius: 8px;
+  background-color: red;
+  width: 100px;
+  height: 25px;
+}

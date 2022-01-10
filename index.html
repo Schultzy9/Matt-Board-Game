@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Matt's Board Game</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src='js/jquery.js'></script>
+  <script src='js/underscore.js'></script>
+  <script src='js/board-game.js'></script>
+</head>
+<body>
+
+  <div id='container'>
+
+    <h1>Matt's Board Game!</h1>
+
+    <div class='setGame'>
+      <label>How many players?</label>
+      <input id='playerNumbers' type='number'></input>
+      <button id='submitPlayerNumbers'>Submit</button>
+
+      <div id='playerNames'>
+      </div>
+    </div>
+
+    <button id='start'>Start Game</button>
+
+    <div class='gameStart'>
+      <h2>Current Player</h2>
+      <h1 id='currentPlayer'></h1>
+      <button id='nextPlayer'>Next Player</button>
+    </div>
+
+    <div class='diceTime'>
+      <h2>Roll the dice!</h2>
+
+      <button id='dice'>Let's go</button>
+      <h1 id='showDice'></h1>
+    </div>
+
+    <div class='chanceTime'>
+      <h2>Chance Time!<h2>
+      <button id='chance'>Draw card</button>
+      <h1 id='showChance'><h1>
+    </div>
+
+    <div class='duelTime'>
+      <h2>Find Opponent and Duel Type</h2>
+      <button id='duel'>Duel Time!</button>
+      <h1 id='showDuel'></h1>
+      <h1 id='showDuelGame'></h1>
+    </div>
+
+  </div>
+
+
+</body>
+</html>
