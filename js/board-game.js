@@ -48,6 +48,8 @@ let numOfPlayers = 0;
 let players = [];
 let currentPlayer = [];
 
+//FUNCTIONS FOR RECORDING STATS AND JAZZ
+
 const createPlayer = (num) => {
   players.push({
     id: (num+1),
@@ -69,6 +71,8 @@ const updateStats = (player, space) => {
     player.duel += 1;
   }
 }
+
+//ACTIONS ONCE THE DOCUMENT IS READY
 
 $(document).ready(function() {
   // SET THE NUMBER OF PLAYERS
@@ -102,7 +106,7 @@ $(document).ready(function() {
   });
 
   //NEXT PLAYER
-  $('#nextPlayer').on('click', function() {
+  $('#nextPlayerButton').on('click', function() {
     currentPlayer.currentPlayer = false;
     if (currentPlayer.id === players.length) {
       players[0].currentPlayer = true;
@@ -120,6 +124,7 @@ $(document).ready(function() {
     $('#showDuelGame').text('');
     $('.duelTime').hide();
     $('#dice').show();
+    $('.nextPlayer').hide();
   });
 
   // ROLL THE DICE
@@ -129,6 +134,7 @@ $(document).ready(function() {
     for (let i = 0; i < players.length; i++) {
       if (players[i].currentPlayer === true) {
         players[i].position += num;
+        updateStats(players[i], board[players[i].position]);
         if (board[players[i].position] === 'chance') {
           $('.chanceTime').show();
           $('#chance').show();

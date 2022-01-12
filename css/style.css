@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
 
 body {
-  background-color: aliceblue;
+  background-color: firebrick;
   color: black;
   font-family: 'Dosis', sans-serif;
 }
 
-.gameStart, #start, .diceTime, .chanceTime, .duelTime {
+.gameStart, #start, .diceTime, .chanceTime, .duelTime, .nextPlayer {
   display: none;
 }
 
@@ -17,13 +17,19 @@ body {
 }
 
 h1 {
+  color: cornflowerblue;
   font-size: 50px;
   text-transform: uppercase;
+  text-shadow: 2px 2px black;
 }
 
 button {
   border-radius: 8px;
-  background-color: red;
+  background-color: lavenderblush;
   width: 100px;
   height: 25px;
+}
+
+button:hover {
+  background-color: lightgoldenrodyellow;
 }
