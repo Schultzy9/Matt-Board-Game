@@ -14,6 +14,16 @@ const chanceDATA = [
     id: 3,
     penalty: 2,
     text: 'You will find happiness with a new love'
+  },
+  {
+    id: 4,
+    penalty: 0,
+    text: 'Sorry champ, you done goofed.'
+  },
+  {
+    id: 5,
+    penalty: 2,
+    text: 'You can do it.'
   }
 ]
 
@@ -141,6 +151,8 @@ $(document).ready(function() {
         } else if (board[players[i].position] === 'duel') {
           $('.duelTime').show();
           $('#duel').show();
+        } else {
+          $('.nextPlayer').show();
         }
         if (players[i].position >= board.length - 1) {
           $('#showDice').text(num + ' - ' + board[players[i].position] + ' - You win!');
@@ -165,6 +177,7 @@ $(document).ready(function() {
     }
     $('#showChance').text(chanceSpace.text + ' ' + chancePenalties[chanceSpace.penalty].text);
     $('#chance').hide();
+    $('.nextPlayer').show();
   });
 
   //FIND DUEL OPPONENT
@@ -179,6 +192,7 @@ $(document).ready(function() {
     num = _.random(0, duelDATA.length-1);
     $('#showDuelGame').text(duelDATA[num]);
     $('#duel').hide();
+    $('.nextPlayer').show();
   });
 
 });
