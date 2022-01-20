@@ -18,7 +18,7 @@
 
     <div class='setGame'>
       <label>How many players?</label>
-      <input id='playerNumbers' type='number'></input>
+      <input id='playerNumbers' type='number' min='2' max='8'></input>
       <button class='btn' id='submitPlayerNumbers'>Submit</button>
 
       <div id='playerNames'>
@@ -55,6 +55,147 @@
 
     <div class='nextPlayer'>
       <button id='nextPlayerButton'>Next Player</button>
+    </div>
+
+    <div id='table'>
+      <table>
+        <tr>
+          <th></th>
+          <th>Start</th>
+          <th>Drink</th>
+          <th>Chance</th>
+          <th>Drink</th>
+          <th>Chance</th>
+          <th>Drink</th>
+          <th>Chance</th>
+          <th>Drink</th>
+          <th>Chance</th>
+          <th>Drink</th>
+          <th>Chance</th>
+          <th>Drink</th>
+          <th>Chance</th>
+        </tr>
+        <tr>
+          <td>Player</td>
+          <td class='tableBoard' id='a1'></td>
+          <td class='tableBoard' id='a2'></td>
+          <td class='tableBoard' id='a3'></td>
+          <td class='tableBoard' id='a4'></td>
+          <td class='tableBoard' id='a5'></td>
+          <td class='tableBoard' id='a6'></td>
+          <td class='tableBoard' id='a7'></td>
+          <td class='tableBoard' id='a8'></td>
+          <td class='tableBoard' id='a9'></td>
+          <td class='tableBoard' id='a10'></td>
+          <td class='tableBoard' id='a11'></td>
+          <td class='tableBoard' id='a12'></td>
+        </tr>
+        <tr>
+          <td>Player</td>
+          <td class='tableBoard' id='b1'></td>
+          <td class='tableBoard' id='b2'></td>
+          <td class='tableBoard' id='b3'></td>
+          <td class='tableBoard' id='b4'></td>
+          <td class='tableBoard' id='b5'></td>
+          <td class='tableBoard' id='b6'></td>
+          <td class='tableBoard' id='b7'></td>
+          <td class='tableBoard' id='b8'></td>
+          <td class='tableBoard' id='b9'></td>
+          <td class='tableBoard' id='b10'></td>
+          <td class='tableBoard' id='b11'></td>
+          <td class='tableBoard' id='b12'></td>
+        </tr>
+        <tr>
+          <td>Player</td>
+          <td class='tableBoard' id='c1'></td>
+          <td class='tableBoard' id='c2'></td>
+          <td class='tableBoard' id='c3'></td>
+          <td class='tableBoard' id='c4'></td>
+          <td class='tableBoard' id='c5'></td>
+          <td class='tableBoard' id='c6'></td>
+          <td class='tableBoard' id='c7'></td>
+          <td class='tableBoard' id='c8'></td>
+          <td class='tableBoard' id='c9'></td>
+          <td class='tableBoard' id='c10'></td>
+          <td class='tableBoard' id='c11'></td>
+          <td class='tableBoard' id='c12'></td>
+        </tr>
+        <tr>
+          <td>Player</td>
+          <td class='tableBoard' id='d1'></td>
+          <td class='tableBoard' id='d2'></td>
+          <td class='tableBoard' id='d3'></td>
+          <td class='tableBoard' id='d4'></td>
+          <td class='tableBoard' id='d5'></td>
+          <td class='tableBoard' id='d6'></td>
+          <td class='tableBoard' id='d7'></td>
+          <td class='tableBoard' id='d8'></td>
+          <td class='tableBoard' id='d9'></td>
+          <td class='tableBoard' id='d10'></td>
+          <td class='tableBoard' id='d11'></td>
+          <td class='tableBoard' id='d12'></td>
+        </tr>
+        <tr>
+          <td>Player</td>
+          <td class='tableBoard' id='e1'></td>
+          <td class='tableBoard' id='e2'></td>
+          <td class='tableBoard' id='e3'></td>
+          <td class='tableBoard' id='e4'></td>
+          <td class='tableBoard' id='e5'></td>
+          <td class='tableBoard' id='e6'></td>
+          <td class='tableBoard' id='e7'></td>
+          <td class='tableBoard' id='e8'></td>
+          <td class='tableBoard' id='e9'></td>
+          <td class='tableBoard' id='e10'></td>
+          <td class='tableBoard' id='e11'></td>
+          <td class='tableBoard' id='e12'></td>
+        </tr>
+        <tr>
+          <td>Player</td>
+          <td class='tableBoard' id='f1'></td>
+          <td class='tableBoard' id='f2'></td>
+          <td class='tableBoard' id='f3'></td>
+          <td class='tableBoard' id='f4'></td>
+          <td class='tableBoard' id='f5'></td>
+          <td class='tableBoard' id='f6'></td>
+          <td class='tableBoard' id='f7'></td>
+          <td class='tableBoard' id='f8'></td>
+          <td class='tableBoard' id='f9'></td>
+          <td class='tableBoard' id='f10'></td>
+          <td class='tableBoard' id='f11'></td>
+          <td class='tableBoard' id='f12'></td>
+        </tr>
+        <tr>
+          <td>Player</td>
+          <td class='tableBoard' id='g1'></td>
+          <td class='tableBoard' id='g2'></td>
+          <td class='tableBoard' id='g3'></td>
+          <td class='tableBoard' id='g4'></td>
+          <td class='tableBoard' id='g5'></td>
+          <td class='tableBoard' id='g6'></td>
+          <td class='tableBoard' id='g7'></td>
+          <td class='tableBoard' id='g8'></td>
+          <td class='tableBoard' id='g9'></td>
+          <td class='tableBoard' id='g10'></td>
+          <td class='tableBoard' id='g11'></td>
+          <td class='tableBoard' id='g12'></td>
+        </tr>
+        <tr>
+          <td>Player</td>
+          <td class='tableBoard' id='h1'></td>
+          <td class='tableBoard' id='h2'></td>
+          <td class='tableBoard' id='h3'></td>
+          <td class='tableBoard' id='h4'></td>
+          <td class='tableBoard' id='h5'></td>
+          <td class='tableBoard' id='h6'></td>
+          <td class='tableBoard' id='h7'></td>
+          <td class='tableBoard' id='h8'></td>
+          <td class='tableBoard' id='h9'></td>
+          <td class='tableBoard' id='h10'></td>
+          <td class='tableBoard' id='h11'></td>
+          <td class='tableBoard' id='h12'></td>
+        </tr>
+      </table>
     </div>
 
   </div>

@@ -84,6 +84,37 @@ const updateStats = (player, space) => {
   }
 }
 
+const updateBoard = (player, position) => {
+  let code = ''
+  if (player === 0) {code = 'a'}
+    else if (player === 1) {code = 'b'}
+    else if (player === 2) {code = 'c'}
+    else if (player === 3) {code = 'd'}
+    else if (player === 4) {code = 'e'}
+    else if (player === 5) {code = 'f'}
+    else if (player === 6) {code = 'g'}
+    else if (player === 7) {code = 'h'
+  }
+  let id = code + position
+  $(`#${id}`).css('background-color', 'yellow')
+}
+
+const clearPreviousPositionOnBoard = (player, position) => {
+  let code = ''
+  if (player === 0) {code = 'a'}
+    else if (player === 1) {code = 'b'}
+    else if (player === 2) {code = 'c'}
+    else if (player === 3) {code = 'd'}
+    else if (player === 4) {code = 'e'}
+    else if (player === 5) {code = 'f'}
+    else if (player === 6) {code = 'g'}
+    else if (player === 7) {code = 'h'
+  }
+  let id = code + position
+  console.log(`Code: ${code} Player: ${player} Position: ${position} ID: ${id}`)
+  $(`#${id}`).css('background-color', 'white')
+}
+
 //ACTIONS ONCE THE DOCUMENT IS READY
 
 $(document).ready(function() {
@@ -147,6 +178,7 @@ $(document).ready(function() {
     let num = _.random(1, 6);
     for (let i = 0; i < players.length; i++) {
       if (players[i].currentPlayer === true) {
+        clearPreviousPositionOnBoard(i, players[i].position);
         players[i].position += num;
         updateStats(players[i], board[players[i].position]);
         if (board[players[i].position] === 'chance') {
@@ -163,6 +195,7 @@ $(document).ready(function() {
         } else {
           $('#showDice').text(num + ' - ' + board[players[i].position]);
         }
+        updateBoard(i, players[i].position);
       }
     }
   });
@@ -172,12 +205,14 @@ $(document).ready(function() {
     let num = _.random(0, chanceDATA.length-1);
     let chanceSpace = chanceDATA[num];
     for (let i = 0; i < players.length; i++) {
+      clearPreviousPositionOnBoard(i, players[i].position);
       if (players[i].currentPlayer === true) {
         players[i].position += chancePenalties[chanceSpace.penaltyLevel].position;
         if (players[i].position < 0) {
           players[i].position = 0;
         }
       }
+      updateBoard(i, players[i].position);
     }
     $('#showChance').text(chanceSpace.text + ' ' + chancePenalties[chanceSpace.penaltyLevel].text);
     $('#chance').hide();
