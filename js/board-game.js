@@ -2,27 +2,27 @@
 const chanceDATA = [
   {
     id: 1,
-    penalty: 1,
+    penaltyLevel: 1,
     text: 'You are a loser.'
   },
   {
     id: 2,
-    penalty: 0,
+    penaltyLevel: 0,
     text: 'Stick wit yo wife'
   },
   {
     id: 3,
-    penalty: 2,
+    penaltyLevel: 2,
     text: 'You will find happiness with a new love'
   },
   {
     id: 4,
-    penalty: 0,
+    penaltyLevel: 0,
     text: 'Sorry champ, you done goofed.'
   },
   {
     id: 5,
-    penalty: 2,
+    penaltyLevel: 2,
     text: 'You can do it.'
   }
 ]
@@ -34,7 +34,7 @@ const chancePenalties = [
   },
   {
     text: 'Have a drink.',
-    postion: 0
+    position: 0
   },
   {
     text: 'Finish your drink!',
@@ -66,18 +66,20 @@ const createPlayer = (num) => {
     name: '',
     position: 0,
     currentPlayer: false,
-    drinks: 0,
-    duels: 0,
-    chances: 0,
+    drinkSpace: 0,
+    totalDrinks: 0,
+    duel: 0,
+    chance: 0,
+    special: false
   })
 }
 
 const updateStats = (player, space) => {
-  if (space = 'drink') {
-    player.drinks += 1;
-  } else if (space = 'chance') {
+  if (space === 'drink') {
+    player.drinkSpace += 1;
+  } else if (space === 'chance') {
     player.chance += 1;
-  } else if (space = 'duel') {
+  } else if (space === 'duel') {
     player.duel += 1;
   }
 }
@@ -108,10 +110,11 @@ $(document).ready(function() {
     $('#start').hide();
     $('.gameStart').show();
     $('.diceTime').show();
-    //CHOOSE FIRST PLAYER
+    //CHOOSE FIRST PLAYER AND SPECIAL
     let num = _.random(0, numOfPlayers-1);
     currentPlayer = players[num]
     currentPlayer.currentPlayer = true;
+    currentPlayer.special = true;
     $('#currentPlayer').text(currentPlayer.name);
   });
 
@@ -135,6 +138,7 @@ $(document).ready(function() {
     $('.duelTime').hide();
     $('#dice').show();
     $('.nextPlayer').hide();
+    console.log(players)
   });
 
   // ROLL THE DICE
@@ -165,17 +169,17 @@ $(document).ready(function() {
 
   // CHANCE BUTTON
   $('#chance').on('click', function() {
-    let num = _.random(0, 2);
+    let num = _.random(0, chanceDATA.length-1);
     let chanceSpace = chanceDATA[num];
     for (let i = 0; i < players.length; i++) {
       if (players[i].currentPlayer === true) {
-        players[i].position += chancePenalties[chanceSpace.penalty].position
+        players[i].position += chancePenalties[chanceSpace.penaltyLevel].position;
         if (players[i].position < 0) {
           players[i].position = 0;
         }
       }
     }
-    $('#showChance').text(chanceSpace.text + ' ' + chancePenalties[chanceSpace.penalty].text);
+    $('#showChance').text(chanceSpace.text + ' ' + chancePenalties[chanceSpace.penaltyLevel].text);
     $('#chance').hide();
     $('.nextPlayer').show();
   });
