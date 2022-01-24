@@ -141,6 +141,7 @@ $(document).ready(function() {
     $('#start').hide();
     $('.gameStart').show();
     $('.diceTime').show();
+    $('#table').show();
     //CHOOSE FIRST PLAYER AND SPECIAL
     let num = _.random(0, numOfPlayers-1);
     currentPlayer = players[num]

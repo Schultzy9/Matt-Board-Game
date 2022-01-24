@@ -37,3 +37,12 @@ button:hover {
 .tableBoard {
   background-color: white;
 }
+
+table{
+  table-layout: fixed;
+  width: 100%;
+}
+
+#table {
+  display: none;
+}
