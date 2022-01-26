@@ -50,7 +50,7 @@ const duelDATA = [
 ]
 
 const board = [
-  'start', 'drink', 'chance', 'drink', 'duel', 'chance', 'drink', 'drink', 'drink', 'duel', 'chance', 'drink', 'chance', 'end'
+  'start', 'drink', 'chance', 'special', 'duel', 'chance', 'drink', 'special', 'special', 'duel', 'chance', 'special', 'chance', 'end'
 ];
 
 //SET UP UNIVERSAL GAME VARIABLES
@@ -81,6 +81,8 @@ const updateStats = (player, space) => {
     player.chance += 1;
   } else if (space === 'duel') {
     player.duel += 1;
+  } else if (space === 'special') {
+    player.special += 1;
   }
 }
 
@@ -188,6 +190,14 @@ $(document).ready(function() {
         } else if (board[players[i].position] === 'duel') {
           $('.duelTime').show();
           $('#duel').show();
+        } else if (board[players[i].position] === 'special') {
+          for (let j = 0; j < players.length; j++) {
+            if (players[j].special === true) {
+              players[j].special = false;
+            }
+            players[i].special = true;
+          }
+          $('.nextPlayer').show();
         } else {
           $('.nextPlayer').show();
         }
